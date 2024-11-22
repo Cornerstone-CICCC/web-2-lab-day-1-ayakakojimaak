@@ -1,0 +1,93 @@
+// Dark Theme Variables
+$breakpoint: 800px;
+
+$theme-dark: (
+  bg: #333,
+  text: #eee,
+  btn: #fff,
+  img: url("../images/night.jpg"),
+);
+
+// Light Theme Variables
+$theme-light: (
+  bg: #f6f6f6,
+  text: #3f3f3f,
+  btn: #b5b5b5,
+  img: url("../images/day.jpg"),
+);
+
+// Apply the variables based on the theme
+:root[data-theme="theme-dark"] {
+  @each $key, $value in $theme-dark {
+    --#{$key}: #{$value};
+  }
+}
+
+:root[data-theme="theme-light"] {
+  @each $key, $value in $theme-light {
+    --#{$key}: #{$value};
+  }
+}
+
+@function get-px($vw, $viewport: $breakpoint) {
+  @return $breakpoint * $vw/100;
+}
+
+body {
+  max-width: $breakpoint;
+  min-height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.form {
+  margin: 10vw auto;
+}
+.result {
+  &__header {
+    padding: 10vw;
+    background-image: var(--img);
+    background-position: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    &-title {
+      font-size: 6vw;
+    }
+    &-subtitle {
+      font-size: 4vw;
+    }
+  }
+  &__table {
+    padding: 10vw;
+    table {
+      width: 100%;
+      text-align: start;
+    }
+  }
+}
+
+.title {
+  display: flex;
+}
+
+@media screen and (min-width: $breakpoint) {
+  .form {
+    margin: get-px(10) auto;
+  }
+  .result {
+    &__header {
+      padding: get-px(10);
+      &-title {
+        font-size: get-px(6);
+      }
+      &-subtitle {
+        font-size: get-px(4);
+      }
+    }
+  }
+}

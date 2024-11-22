@@ -4,22 +4,22 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>City/Weather Search</title>
-    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="css/style.css" />
   </head>
   <body>
     <!-- YOUR CODE HERE -->
     <search>
-      <form id="form">
+      <form id="form" class="form">
         <input type="search" id="form-city" name="city" />
         <button type="submit">Search</button>
       </form>
     </search>
-    <div id="result">
-      <div>
-        <div id="city-name"></div>
-        <div id="city-temperature"></div>
+    <div id="result" class="result">
+      <div class="result__header">
+        <div id="city-name" class="result__header-title"></div>
+        <div id="city-temperature" class="result__header-subtitle"></div>
       </div>
-      <div>
+      <div class="result__table">
         <table id="city-info">
           <tr class="country">
             <td>Country</td>

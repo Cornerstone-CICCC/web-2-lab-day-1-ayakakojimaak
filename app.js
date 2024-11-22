@@ -52,12 +52,21 @@ const showCityData = (info, weather) => {
   table.querySelector(".forecast td:last-child").innerHTML = forecastValue;
 };
 
+const setStyleTheme = (isDay) => {
+  if (isDay) {
+    document.documentElement.setAttribute("data-theme", "theme-light");
+  } else {
+    document.documentElement.setAttribute("data-theme", "theme-dark");
+  }
+};
+
 const search = async () => {
   try {
     const name = await getCityName();
     const info = await getCityInfo(name);
     const weather = await getCityWeather(info.latitude, info.longitude);
-    await showCityData(info, weather);
+    showCityData(info, weather);
+    setStyleTheme(weather.current.is_day);
   } catch (err) {
     console.error(err);
   }

@@ -1,0 +1,69 @@
+:root[data-theme=theme-dark] {
+  --bg: #333;
+  --text: #eee;
+  --btn: #fff;
+  --img: url("../images/night.jpg");
+}
+
+:root[data-theme=theme-light] {
+  --bg: #f6f6f6;
+  --text: #3f3f3f;
+  --btn: #b5b5b5;
+  --img: url("../images/day.jpg");
+}
+
+body {
+  max-width: 800px;
+  min-height: 100vh;
+  margin: 0 auto;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  background: var(--bg);
+  color: var(--text);
+}
+
+.form {
+  margin: 10vw auto;
+}
+
+.result__header {
+  padding: 10vw;
+  background-image: var(--img);
+  background-position: center;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.result__header-title {
+  font-size: 6vw;
+}
+.result__header-subtitle {
+  font-size: 4vw;
+}
+.result__table {
+  padding: 10vw;
+}
+.result__table table {
+  width: 100%;
+  text-align: start;
+}
+
+.title {
+  display: flex;
+}
+
+@media screen and (min-width: 800px) {
+  .form {
+    margin: 80px auto;
+  }
+  .result__header {
+    padding: 80px;
+  }
+  .result__header-title {
+    font-size: 48px;
+  }
+  .result__header-subtitle {
+    font-size: 32px;
+  }
+}/*# sourceMappingURL=style.css.map */
